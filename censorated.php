@@ -1,10 +1,10 @@
 <?php
-$paragraph = $_GET['paragraph'];
-$censoredWord = $_GET['word'];
-$paragraphFirstUppercase = ucfirst($paragraph);
-$paragraphLength = strlen($paragraph);
-$paragraphCensored = str_replace($censoredWord, '***', $paragraph);
-$paragraphCensoredUpper = ucfirst($paragraphCensored);
+$word = $_GET['word'];
+$text = $_GET['text'];
+
+$originalTextLength = strlen($text);
+$censoredText = str_replace($word, '***', $text);
+$censoredTextLength = strlen($censoredText);
 ?>
 
 <!DOCTYPE html>
@@ -17,16 +17,17 @@ $paragraphCensoredUpper = ucfirst($paragraphCensored);
 </head>
 <body>
     <div>
-        <h1>PHP Badwords</h1>
-        <h2>Paragrafo</h2>
-        <div>
-            <p><?php echo $paragraphFirstUppercase; ?></p>
-            <p>Lunghezza paragrafo: <?php echo $paragraphLength; ?> caratteri</p>
-        </div>
-        <h2>Paragrafo Censurato</h2>
-        </div>
-            <p><?php echo $paragraphCensoredUpper; ?></p>
-        </div>
+        <h2>Paragrafo originale</h2>
+
+        <p><?php echo $text; ?></p>
+        <div>Lunghezza: <?php echo $originalTextLength; ?> caratteri</div>
+    </div>
+
+    <div>
+        <h2>Paragrafo censurato</h2>
+
+        <p><?php echo $censoredText; ?></p>
+        <div>Lunghezza: <?php echo $censoredTextLength; ?> caratteri</div>
     </div>
 </body>
 </html>

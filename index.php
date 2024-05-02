@@ -8,14 +8,22 @@
 </head>
 <body>
     <div>
-        <h1>PHP Badwords</h1>
-        <form action="censorated.php" method="GET">
-            <textarea name="paragraph"  placeholder="Inserisci un testo" required></textarea>
-            <div>
-                <button type="submit">Invia</button>
-                <input name="word" type="text" placeholder="Inserisci la parola che vuoi censurare" required>
-            </div>
-        </form>
+    <form action="censored.php" method="GET">
+        <div>
+            <label for="censored-word">Parola da censurare</label>
+            <input id="censored-word" name="word" type="text" />
+        </div>
+
+        <div>
+            <label for="censored-text">Testo</label>
+            <textarea id="censored-text" name="text" rows="10" cols="50"></textarea>
+        </div>
+
+        <div>
+            <button type="submit">Invia</button>
+        </div>
+    </form>
+
     </div>
 </body>
 </html>
